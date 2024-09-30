@@ -1,0 +1,22 @@
+subscription LiveMatchSubscription {
+  match(order_by: {date: desc, completed: asc}, limit: 3) {
+    current_minute
+    title
+    completed
+    stadium {
+        name
+        capacity
+        photo_url
+    }
+    match_score {
+      away_team_score
+      home_team_score
+    }
+    away: team {
+      ...NationalTeam
+    }
+    home: teamByHomeTeamId {
+      ...NationalTeam
+    }
+  }
+}

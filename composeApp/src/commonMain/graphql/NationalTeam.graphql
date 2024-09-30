@@ -1,0 +1,17 @@
+fragment NationalTeam on team {
+    name
+    country
+    national_team
+    flag_url
+    rankings {
+        fifa_points
+        losses
+        draws
+        wins
+    }
+    stadium {
+        name
+        capacity
+        photo_url
+    }
+}

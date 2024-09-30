@@ -1,0 +1,7 @@
+query RankingQuery {
+    ranking(order_by: {rank: asc}) {
+        team {
+            ...NationalTeam
+        }
+    }
+}

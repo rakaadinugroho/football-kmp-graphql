@@ -1,0 +1,11 @@
+query TopPlayerQuery {
+  player(limit: 5, order_by: {total_caps: desc}, where: {team: {league: {id: {_is_null: false}}}}) {
+    ...PlayerDetail
+    team {
+      name
+      league {
+        name
+      }
+    }
+  }
+}

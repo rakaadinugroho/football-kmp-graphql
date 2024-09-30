@@ -1,0 +1,29 @@
+query DetailMatchQuery($matchId: Int!) {
+  match_by_pk(id: $matchId) {
+    title
+    date
+    current_minute
+    completed
+    stadium {
+        name
+        capacity
+        photo_url
+    }
+    away: team {
+      ...NationalTeam
+      match_players {
+        player {
+          ...PlayerDetail
+        }
+      }
+    }
+    home: teamByHomeTeamId {
+      ...NationalTeam
+      match_players {
+        player {
+          ...PlayerDetail
+        }
+      }
+    }
+  }
+}

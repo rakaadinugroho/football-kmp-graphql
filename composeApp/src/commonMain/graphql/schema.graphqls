@@ -1,0 +1,4104 @@
+schema  { query: query_root mutation: mutation_root subscription: subscription_root }
+
+scalar date
+
+scalar numeric
+
+scalar timestamp
+
+type __Directive { args: __InputValue
+  description: String!
+  isRepeatable: String!
+  locations: String!
+  name: String!
+}
+
+type __EnumValue { deprecationReason: String!
+  description: String!
+  isDeprecated: String!
+  name: String!
+}
+
+type __Field { args: __InputValue
+  deprecationReason: String!
+  description: String!
+  isDeprecated: String!
+  name: String!
+  type: __Type
+}
+
+type __InputValue { defaultValue: String!
+  description: String!
+  name: String!
+  type: __Type
+}
+
+type __Schema { description: String!
+  directives: __Directive
+  mutationType: __Type
+  queryType: __Type
+  subscriptionType: __Type
+  types: __Type
+}
+
+type __Type { description: String!
+  enumValues(includeDeprecated: Boolean = false): __EnumValue
+  fields(includeDeprecated: Boolean = false): __Field
+  inputFields: __InputValue
+  interfaces: __Type
+  kind: __TypeKind!
+  name: String!
+  ofType: __Type
+  possibleTypes: __Type
+}
+
+type query_root { "fetch aggregated fields from the table: \"league\""
+league_aggregate("filter the rows returned"
+where: league_bool_exp, "sort the rows by one or more columns"
+order_by: [league_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [league_select_column!]): league_aggregate!
+  "fetch aggregated fields from the table: \"match\""
+match_aggregate("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): match_aggregate!
+  "fetch aggregated fields from the table: \"match_player\""
+match_player_aggregate("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): match_player_aggregate!
+  "fetch aggregated fields from the table: \"match_score\""
+match_score_aggregate("filter the rows returned"
+where: match_score_bool_exp, "sort the rows by one or more columns"
+order_by: [match_score_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_score_select_column!]): match_score_aggregate!
+  "fetch aggregated fields from the table: \"match_statistics\""
+match_statistics_aggregate("filter the rows returned"
+where: match_statistics_bool_exp, "sort the rows by one or more columns"
+order_by: [match_statistics_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_statistics_select_column!]): match_statistics_aggregate!
+  "fetch aggregated fields from the table: \"player\""
+player_aggregate("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): player_aggregate!
+  "fetch aggregated fields from the table: \"ranking\""
+ranking_aggregate("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): ranking_aggregate!
+  "fetch aggregated fields from the table: \"stadium\""
+stadium_aggregate("filter the rows returned"
+where: stadium_bool_exp, "sort the rows by one or more columns"
+order_by: [stadium_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [stadium_select_column!]): stadium_aggregate!
+  "fetch aggregated fields from the table: \"team\""
+team_aggregate("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): team_aggregate!
+  "fetch aggregated fields from the table: \"team_player\""
+team_player_aggregate("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): team_player_aggregate!
+  "fetch data from the table: \"league\""
+league("filter the rows returned"
+where: league_bool_exp, "sort the rows by one or more columns"
+order_by: [league_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [league_select_column!]): [league!]!
+  "fetch data from the table: \"league\" using primary key columns"
+league_by_pk(id: Int!): league
+  "fetch data from the table: \"match\""
+match("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): [match!]!
+  "fetch data from the table: \"match\" using primary key columns"
+match_by_pk(id: Int!): match
+  "fetch data from the table: \"match_player\""
+match_player("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): [match_player!]!
+  "fetch data from the table: \"match_player\" using primary key columns"
+match_player_by_pk(match_id: Int!, player_id: Int!): match_player
+  "fetch data from the table: \"match_score\""
+match_score("filter the rows returned"
+where: match_score_bool_exp, "sort the rows by one or more columns"
+order_by: [match_score_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_score_select_column!]): [match_score!]!
+  "fetch data from the table: \"match_score\" using primary key columns"
+match_score_by_pk(match_id: Int!): match_score
+  "fetch data from the table: \"match_statistics\""
+match_statistics("filter the rows returned"
+where: match_statistics_bool_exp, "sort the rows by one or more columns"
+order_by: [match_statistics_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_statistics_select_column!]): [match_statistics!]!
+  "fetch data from the table: \"match_statistics\" using primary key columns"
+match_statistics_by_pk(match_id: Int!): match_statistics
+  "fetch data from the table: \"player\""
+player("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): [player!]!
+  "fetch data from the table: \"player\" using primary key columns"
+player_by_pk(id: Int!): player
+  "fetch data from the table: \"ranking\""
+ranking("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): [ranking!]!
+  "fetch data from the table: \"ranking\" using primary key columns"
+ranking_by_pk(id: Int!): ranking
+  "fetch data from the table: \"stadium\""
+stadium("filter the rows returned"
+where: stadium_bool_exp, "sort the rows by one or more columns"
+order_by: [stadium_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [stadium_select_column!]): [stadium!]!
+  "fetch data from the table: \"stadium\" using primary key columns"
+stadium_by_pk(id: Int!): stadium
+  "fetch data from the table: \"team\""
+team("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): [team!]!
+  "fetch data from the table: \"team\" using primary key columns"
+team_by_pk(id: Int!): team
+  "fetch data from the table: \"team_player\""
+team_player("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): [team_player!]!
+  "fetch data from the table: \"team_player\" using primary key columns"
+team_player_by_pk(team_id: Int!, player_id: Int!): team_player
+}
+
+type subscription_root { "fetch aggregated fields from the table: \"league\""
+league_aggregate("filter the rows returned"
+where: league_bool_exp, "sort the rows by one or more columns"
+order_by: [league_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [league_select_column!]): league_aggregate!
+  "fetch aggregated fields from the table: \"match\""
+match_aggregate("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): match_aggregate!
+  "fetch aggregated fields from the table: \"match_player\""
+match_player_aggregate("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): match_player_aggregate!
+  "fetch aggregated fields from the table: \"match_score\""
+match_score_aggregate("filter the rows returned"
+where: match_score_bool_exp, "sort the rows by one or more columns"
+order_by: [match_score_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_score_select_column!]): match_score_aggregate!
+  "fetch aggregated fields from the table: \"match_statistics\""
+match_statistics_aggregate("filter the rows returned"
+where: match_statistics_bool_exp, "sort the rows by one or more columns"
+order_by: [match_statistics_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_statistics_select_column!]): match_statistics_aggregate!
+  "fetch aggregated fields from the table: \"player\""
+player_aggregate("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): player_aggregate!
+  "fetch aggregated fields from the table: \"ranking\""
+ranking_aggregate("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): ranking_aggregate!
+  "fetch aggregated fields from the table: \"stadium\""
+stadium_aggregate("filter the rows returned"
+where: stadium_bool_exp, "sort the rows by one or more columns"
+order_by: [stadium_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [stadium_select_column!]): stadium_aggregate!
+  "fetch aggregated fields from the table: \"team\""
+team_aggregate("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): team_aggregate!
+  "fetch aggregated fields from the table: \"team_player\""
+team_player_aggregate("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): team_player_aggregate!
+  "fetch data from the table in a streaming manner: \"league\""
+league_stream("filter the rows returned"
+where: league_bool_exp, "cursor to stream the results returned by the query"
+cursor: [league_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [league!]!
+  "fetch data from the table in a streaming manner: \"match\""
+match_stream("filter the rows returned"
+where: match_bool_exp, "cursor to stream the results returned by the query"
+cursor: [match_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [match!]!
+  "fetch data from the table in a streaming manner: \"match_player\""
+match_player_stream("filter the rows returned"
+where: match_player_bool_exp, "cursor to stream the results returned by the query"
+cursor: [match_player_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [match_player!]!
+  "fetch data from the table in a streaming manner: \"match_score\""
+match_score_stream("filter the rows returned"
+where: match_score_bool_exp, "cursor to stream the results returned by the query"
+cursor: [match_score_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [match_score!]!
+  "fetch data from the table in a streaming manner: \"match_statistics\""
+match_statistics_stream("filter the rows returned"
+where: match_statistics_bool_exp, "cursor to stream the results returned by the query"
+cursor: [match_statistics_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [match_statistics!]!
+  "fetch data from the table in a streaming manner: \"player\""
+player_stream("filter the rows returned"
+where: player_bool_exp, "cursor to stream the results returned by the query"
+cursor: [player_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [player!]!
+  "fetch data from the table in a streaming manner: \"ranking\""
+ranking_stream("filter the rows returned"
+where: ranking_bool_exp, "cursor to stream the results returned by the query"
+cursor: [ranking_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [ranking!]!
+  "fetch data from the table in a streaming manner: \"stadium\""
+stadium_stream("filter the rows returned"
+where: stadium_bool_exp, "cursor to stream the results returned by the query"
+cursor: [stadium_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [stadium!]!
+  "fetch data from the table in a streaming manner: \"team\""
+team_stream("filter the rows returned"
+where: team_bool_exp, "cursor to stream the results returned by the query"
+cursor: [team_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [team!]!
+  "fetch data from the table in a streaming manner: \"team_player\""
+team_player_stream("filter the rows returned"
+where: team_player_bool_exp, "cursor to stream the results returned by the query"
+cursor: [team_player_stream_cursor_input]!, "maximum number of rows returned in a single batch"
+batch_size: Int!): [team_player!]!
+  "fetch data from the table: \"league\""
+league("filter the rows returned"
+where: league_bool_exp, "sort the rows by one or more columns"
+order_by: [league_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [league_select_column!]): [league!]!
+  "fetch data from the table: \"league\" using primary key columns"
+league_by_pk(id: Int!): league
+  "fetch data from the table: \"match\""
+match("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): [match!]!
+  "fetch data from the table: \"match\" using primary key columns"
+match_by_pk(id: Int!): match
+  "fetch data from the table: \"match_player\""
+match_player("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): [match_player!]!
+  "fetch data from the table: \"match_player\" using primary key columns"
+match_player_by_pk(match_id: Int!, player_id: Int!): match_player
+  "fetch data from the table: \"match_score\""
+match_score("filter the rows returned"
+where: match_score_bool_exp, "sort the rows by one or more columns"
+order_by: [match_score_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_score_select_column!]): [match_score!]!
+  "fetch data from the table: \"match_score\" using primary key columns"
+match_score_by_pk(match_id: Int!): match_score
+  "fetch data from the table: \"match_statistics\""
+match_statistics("filter the rows returned"
+where: match_statistics_bool_exp, "sort the rows by one or more columns"
+order_by: [match_statistics_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_statistics_select_column!]): [match_statistics!]!
+  "fetch data from the table: \"match_statistics\" using primary key columns"
+match_statistics_by_pk(match_id: Int!): match_statistics
+  "fetch data from the table: \"player\""
+player("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): [player!]!
+  "fetch data from the table: \"player\" using primary key columns"
+player_by_pk(id: Int!): player
+  "fetch data from the table: \"ranking\""
+ranking("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): [ranking!]!
+  "fetch data from the table: \"ranking\" using primary key columns"
+ranking_by_pk(id: Int!): ranking
+  "fetch data from the table: \"stadium\""
+stadium("filter the rows returned"
+where: stadium_bool_exp, "sort the rows by one or more columns"
+order_by: [stadium_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [stadium_select_column!]): [stadium!]!
+  "fetch data from the table: \"stadium\" using primary key columns"
+stadium_by_pk(id: Int!): stadium
+  "fetch data from the table: \"team\""
+team("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): [team!]!
+  "fetch data from the table: \"team\" using primary key columns"
+team_by_pk(id: Int!): team
+  "fetch data from the table: \"team_player\""
+team_player("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): [team_player!]!
+  "fetch data from the table: \"team_player\" using primary key columns"
+team_player_by_pk(team_id: Int!, player_id: Int!): team_player
+}
+
+"aggregate avg on columns"
+type league_avg_fields { id: Float
+  tier: Float
+}
+
+"aggregate avg on columns"
+type match_avg_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate avg on columns"
+type match_player_avg_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate avg on columns"
+type match_score_avg_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate avg on columns"
+type match_statistics_avg_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate avg on columns"
+type player_avg_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate avg on columns"
+type ranking_avg_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate avg on columns"
+type stadium_avg_fields { capacity: Float
+  id: Float
+}
+
+"aggregate avg on columns"
+type team_avg_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate avg on columns"
+type team_player_avg_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate fields of \"league\""
+type league_aggregate_fields { avg: league_avg_fields
+  count(distinct: Boolean, columns: [league_select_column!]): Int!
+  max: league_max_fields
+  min: league_min_fields
+  stddev: league_stddev_fields
+  stddev_pop: league_stddev_pop_fields
+  stddev_samp: league_stddev_samp_fields
+  sum: league_sum_fields
+  var_pop: league_var_pop_fields
+  var_samp: league_var_samp_fields
+  variance: league_variance_fields
+}
+
+"aggregate fields of \"match\""
+type match_aggregate_fields { avg: match_avg_fields
+  count(distinct: Boolean, columns: [match_select_column!]): Int!
+  max: match_max_fields
+  min: match_min_fields
+  stddev: match_stddev_fields
+  stddev_pop: match_stddev_pop_fields
+  stddev_samp: match_stddev_samp_fields
+  sum: match_sum_fields
+  var_pop: match_var_pop_fields
+  var_samp: match_var_samp_fields
+  variance: match_variance_fields
+}
+
+"aggregate fields of \"match_player\""
+type match_player_aggregate_fields { avg: match_player_avg_fields
+  count(distinct: Boolean, columns: [match_player_select_column!]): Int!
+  max: match_player_max_fields
+  min: match_player_min_fields
+  stddev: match_player_stddev_fields
+  stddev_pop: match_player_stddev_pop_fields
+  stddev_samp: match_player_stddev_samp_fields
+  sum: match_player_sum_fields
+  var_pop: match_player_var_pop_fields
+  var_samp: match_player_var_samp_fields
+  variance: match_player_variance_fields
+}
+
+"aggregate fields of \"match_score\""
+type match_score_aggregate_fields { avg: match_score_avg_fields
+  count(distinct: Boolean, columns: [match_score_select_column!]): Int!
+  max: match_score_max_fields
+  min: match_score_min_fields
+  stddev: match_score_stddev_fields
+  stddev_pop: match_score_stddev_pop_fields
+  stddev_samp: match_score_stddev_samp_fields
+  sum: match_score_sum_fields
+  var_pop: match_score_var_pop_fields
+  var_samp: match_score_var_samp_fields
+  variance: match_score_variance_fields
+}
+
+"aggregate fields of \"match_statistics\""
+type match_statistics_aggregate_fields { avg: match_statistics_avg_fields
+  count(distinct: Boolean, columns: [match_statistics_select_column!]): Int!
+  max: match_statistics_max_fields
+  min: match_statistics_min_fields
+  stddev: match_statistics_stddev_fields
+  stddev_pop: match_statistics_stddev_pop_fields
+  stddev_samp: match_statistics_stddev_samp_fields
+  sum: match_statistics_sum_fields
+  var_pop: match_statistics_var_pop_fields
+  var_samp: match_statistics_var_samp_fields
+  variance: match_statistics_variance_fields
+}
+
+"aggregate fields of \"player\""
+type player_aggregate_fields { avg: player_avg_fields
+  count(distinct: Boolean, columns: [player_select_column!]): Int!
+  max: player_max_fields
+  min: player_min_fields
+  stddev: player_stddev_fields
+  stddev_pop: player_stddev_pop_fields
+  stddev_samp: player_stddev_samp_fields
+  sum: player_sum_fields
+  var_pop: player_var_pop_fields
+  var_samp: player_var_samp_fields
+  variance: player_variance_fields
+}
+
+"aggregate fields of \"ranking\""
+type ranking_aggregate_fields { avg: ranking_avg_fields
+  count(distinct: Boolean, columns: [ranking_select_column!]): Int!
+  max: ranking_max_fields
+  min: ranking_min_fields
+  stddev: ranking_stddev_fields
+  stddev_pop: ranking_stddev_pop_fields
+  stddev_samp: ranking_stddev_samp_fields
+  sum: ranking_sum_fields
+  var_pop: ranking_var_pop_fields
+  var_samp: ranking_var_samp_fields
+  variance: ranking_variance_fields
+}
+
+"aggregate fields of \"stadium\""
+type stadium_aggregate_fields { avg: stadium_avg_fields
+  count(distinct: Boolean, columns: [stadium_select_column!]): Int!
+  max: stadium_max_fields
+  min: stadium_min_fields
+  stddev: stadium_stddev_fields
+  stddev_pop: stadium_stddev_pop_fields
+  stddev_samp: stadium_stddev_samp_fields
+  sum: stadium_sum_fields
+  var_pop: stadium_var_pop_fields
+  var_samp: stadium_var_samp_fields
+  variance: stadium_variance_fields
+}
+
+"aggregate fields of \"team\""
+type team_aggregate_fields { avg: team_avg_fields
+  count(distinct: Boolean, columns: [team_select_column!]): Int!
+  max: team_max_fields
+  min: team_min_fields
+  stddev: team_stddev_fields
+  stddev_pop: team_stddev_pop_fields
+  stddev_samp: team_stddev_samp_fields
+  sum: team_sum_fields
+  var_pop: team_var_pop_fields
+  var_samp: team_var_samp_fields
+  variance: team_variance_fields
+}
+
+"aggregate fields of \"team_player\""
+type team_player_aggregate_fields { avg: team_player_avg_fields
+  count(distinct: Boolean, columns: [team_player_select_column!]): Int!
+  max: team_player_max_fields
+  min: team_player_min_fields
+  stddev: team_player_stddev_fields
+  stddev_pop: team_player_stddev_pop_fields
+  stddev_samp: team_player_stddev_samp_fields
+  sum: team_player_sum_fields
+  var_pop: team_player_var_pop_fields
+  var_samp: team_player_var_samp_fields
+  variance: team_player_variance_fields
+}
+
+"aggregate max on columns"
+type league_max_fields { association: String
+  country: String
+  id: Int
+  name: String
+  tier: Int
+}
+
+"aggregate max on columns"
+type match_max_fields { away_team_id: Int
+  current_minute: Int
+  date: timestamp
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+  title: String
+}
+
+"aggregate max on columns"
+type match_player_max_fields { match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"aggregate max on columns"
+type match_score_max_fields { away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"aggregate max on columns"
+type match_statistics_max_fields { fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"aggregate max on columns"
+type player_max_fields { current_team_id: Int
+  id: Int
+  name: String
+  national_team_id: Int
+  photo_url: String
+  position: String
+  total_caps: Int
+}
+
+"aggregate max on columns"
+type ranking_max_fields { date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"aggregate max on columns"
+type stadium_max_fields { capacity: Int
+  id: Int
+  location: String
+  name: String
+  photo_url: String
+}
+
+"aggregate max on columns"
+type team_max_fields { country: String
+  flag_url: String
+  id: Int
+  league_id: Int
+  main_stadium_id: Int
+  name: String
+  stadium_id: Int
+}
+
+"aggregate max on columns"
+type team_player_max_fields { player_id: Int
+  team_id: Int
+}
+
+"aggregate min on columns"
+type league_min_fields { association: String
+  country: String
+  id: Int
+  name: String
+  tier: Int
+}
+
+"aggregate min on columns"
+type match_min_fields { away_team_id: Int
+  current_minute: Int
+  date: timestamp
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+  title: String
+}
+
+"aggregate min on columns"
+type match_player_min_fields { match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"aggregate min on columns"
+type match_score_min_fields { away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"aggregate min on columns"
+type match_statistics_min_fields { fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"aggregate min on columns"
+type player_min_fields { current_team_id: Int
+  id: Int
+  name: String
+  national_team_id: Int
+  photo_url: String
+  position: String
+  total_caps: Int
+}
+
+"aggregate min on columns"
+type ranking_min_fields { date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"aggregate min on columns"
+type stadium_min_fields { capacity: Int
+  id: Int
+  location: String
+  name: String
+  photo_url: String
+}
+
+"aggregate min on columns"
+type team_min_fields { country: String
+  flag_url: String
+  id: Int
+  league_id: Int
+  main_stadium_id: Int
+  name: String
+  stadium_id: Int
+}
+
+"aggregate min on columns"
+type team_player_min_fields { player_id: Int
+  team_id: Int
+}
+
+"aggregate stddev on columns"
+type league_stddev_fields { id: Float
+  tier: Float
+}
+
+"aggregate stddev on columns"
+type match_player_stddev_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev on columns"
+type match_score_stddev_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate stddev on columns"
+type match_statistics_stddev_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate stddev on columns"
+type match_stddev_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate stddev on columns"
+type player_stddev_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate stddev on columns"
+type ranking_stddev_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate stddev on columns"
+type stadium_stddev_fields { capacity: Float
+  id: Float
+}
+
+"aggregate stddev on columns"
+type team_player_stddev_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev on columns"
+type team_stddev_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate stddev_pop on columns"
+type league_stddev_pop_fields { id: Float
+  tier: Float
+}
+
+"aggregate stddev_pop on columns"
+type match_player_stddev_pop_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev_pop on columns"
+type match_score_stddev_pop_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate stddev_pop on columns"
+type match_statistics_stddev_pop_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate stddev_pop on columns"
+type match_stddev_pop_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate stddev_pop on columns"
+type player_stddev_pop_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate stddev_pop on columns"
+type ranking_stddev_pop_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate stddev_pop on columns"
+type stadium_stddev_pop_fields { capacity: Float
+  id: Float
+}
+
+"aggregate stddev_pop on columns"
+type team_player_stddev_pop_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev_pop on columns"
+type team_stddev_pop_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate stddev_samp on columns"
+type league_stddev_samp_fields { id: Float
+  tier: Float
+}
+
+"aggregate stddev_samp on columns"
+type match_player_stddev_samp_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev_samp on columns"
+type match_score_stddev_samp_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate stddev_samp on columns"
+type match_statistics_stddev_samp_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate stddev_samp on columns"
+type match_stddev_samp_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate stddev_samp on columns"
+type player_stddev_samp_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate stddev_samp on columns"
+type ranking_stddev_samp_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate stddev_samp on columns"
+type stadium_stddev_samp_fields { capacity: Float
+  id: Float
+}
+
+"aggregate stddev_samp on columns"
+type team_player_stddev_samp_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate stddev_samp on columns"
+type team_stddev_samp_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate sum on columns"
+type league_sum_fields { id: Int
+  tier: Int
+}
+
+"aggregate sum on columns"
+type match_player_sum_fields { match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"aggregate sum on columns"
+type match_score_sum_fields { away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"aggregate sum on columns"
+type match_statistics_sum_fields { fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"aggregate sum on columns"
+type match_sum_fields { away_team_id: Int
+  current_minute: Int
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+}
+
+"aggregate sum on columns"
+type player_sum_fields { current_team_id: Int
+  id: Int
+  national_team_id: Int
+  total_caps: Int
+}
+
+"aggregate sum on columns"
+type ranking_sum_fields { draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"aggregate sum on columns"
+type stadium_sum_fields { capacity: Int
+  id: Int
+}
+
+"aggregate sum on columns"
+type team_player_sum_fields { player_id: Int
+  team_id: Int
+}
+
+"aggregate sum on columns"
+type team_sum_fields { id: Int
+  league_id: Int
+  main_stadium_id: Int
+  stadium_id: Int
+}
+
+"aggregate var_pop on columns"
+type league_var_pop_fields { id: Float
+  tier: Float
+}
+
+"aggregate var_pop on columns"
+type match_player_var_pop_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate var_pop on columns"
+type match_score_var_pop_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate var_pop on columns"
+type match_statistics_var_pop_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate var_pop on columns"
+type match_var_pop_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate var_pop on columns"
+type player_var_pop_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate var_pop on columns"
+type ranking_var_pop_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate var_pop on columns"
+type stadium_var_pop_fields { capacity: Float
+  id: Float
+}
+
+"aggregate var_pop on columns"
+type team_player_var_pop_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate var_pop on columns"
+type team_var_pop_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate var_samp on columns"
+type league_var_samp_fields { id: Float
+  tier: Float
+}
+
+"aggregate var_samp on columns"
+type match_player_var_samp_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate var_samp on columns"
+type match_score_var_samp_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate var_samp on columns"
+type match_statistics_var_samp_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate var_samp on columns"
+type match_var_samp_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate var_samp on columns"
+type player_var_samp_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate var_samp on columns"
+type ranking_var_samp_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate var_samp on columns"
+type stadium_var_samp_fields { capacity: Float
+  id: Float
+}
+
+"aggregate var_samp on columns"
+type team_player_var_samp_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate var_samp on columns"
+type team_var_samp_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregate variance on columns"
+type league_variance_fields { id: Float
+  tier: Float
+}
+
+"aggregate variance on columns"
+type match_player_variance_fields { match_id: Float
+  minutes_played: Float
+  player_id: Float
+  team_id: Float
+}
+
+"aggregate variance on columns"
+type match_score_variance_fields { away_team_score: Float
+  home_team_score: Float
+  match_id: Float
+}
+
+"aggregate variance on columns"
+type match_statistics_variance_fields { fouls_away: Float
+  fouls_home: Float
+  match_id: Float
+  possession_away: Float
+  possession_home: Float
+  shots_away: Float
+  shots_home: Float
+}
+
+"aggregate variance on columns"
+type match_variance_fields { away_team_id: Float
+  current_minute: Float
+  home_team_id: Float
+  id: Float
+  stadium_id: Float
+}
+
+"aggregate variance on columns"
+type player_variance_fields { current_team_id: Float
+  id: Float
+  national_team_id: Float
+  total_caps: Float
+}
+
+"aggregate variance on columns"
+type ranking_variance_fields { draws: Float
+  fifa_points: Float
+  id: Float
+  losses: Float
+  rank: Float
+  team_id: Float
+  wins: Float
+}
+
+"aggregate variance on columns"
+type stadium_variance_fields { capacity: Float
+  id: Float
+}
+
+"aggregate variance on columns"
+type team_player_variance_fields { player_id: Float
+  team_id: Float
+}
+
+"aggregate variance on columns"
+type team_variance_fields { id: Float
+  league_id: Float
+  main_stadium_id: Float
+  stadium_id: Float
+}
+
+"aggregated selection of \"league\""
+type league_aggregate { aggregate: league_aggregate_fields
+  nodes: [league!]!
+}
+
+"aggregated selection of \"match\""
+type match_aggregate { aggregate: match_aggregate_fields
+  nodes: [match!]!
+}
+
+"aggregated selection of \"match_player\""
+type match_player_aggregate { aggregate: match_player_aggregate_fields
+  nodes: [match_player!]!
+}
+
+"aggregated selection of \"match_score\""
+type match_score_aggregate { aggregate: match_score_aggregate_fields
+  nodes: [match_score!]!
+}
+
+"aggregated selection of \"match_statistics\""
+type match_statistics_aggregate { aggregate: match_statistics_aggregate_fields
+  nodes: [match_statistics!]!
+}
+
+"aggregated selection of \"player\""
+type player_aggregate { aggregate: player_aggregate_fields
+  nodes: [player!]!
+}
+
+"aggregated selection of \"ranking\""
+type ranking_aggregate { aggregate: ranking_aggregate_fields
+  nodes: [ranking!]!
+}
+
+"aggregated selection of \"stadium\""
+type stadium_aggregate { aggregate: stadium_aggregate_fields
+  nodes: [stadium!]!
+}
+
+"aggregated selection of \"team\""
+type team_aggregate { aggregate: team_aggregate_fields
+  nodes: [team!]!
+}
+
+"aggregated selection of \"team_player\""
+type team_player_aggregate { aggregate: team_player_aggregate_fields
+  nodes: [team_player!]!
+}
+
+"columns and relationships of \"league\""
+type league { association: String
+  country: String!
+  id: Int!
+  name: String!
+  tier: Int
+  "An aggregate relationship"
+teams_aggregate("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): team_aggregate!
+  "An array relationship"
+teams("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): [team!]!
+}
+
+"columns and relationships of \"match\""
+type match { away_team_id: Int
+  completed: Boolean
+  current_minute: Int
+  date: timestamp!
+  home_team_id: Int
+  id: Int!
+  stadium_id: Int
+  title: String
+  "An aggregate relationship"
+match_players_aggregate("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): match_player_aggregate!
+  "An array relationship"
+match_players("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): [match_player!]!
+  "An object relationship"
+match_score: match_score
+  "An object relationship"
+match_statistic: match_statistics
+  "An object relationship"
+stadium: stadium
+  "An object relationship"
+team: team
+  "An object relationship"
+teamByHomeTeamId: team
+}
+
+"columns and relationships of \"match_player\""
+type match_player { is_starter: Boolean
+  match_id: Int!
+  minutes_played: Int
+  player_id: Int!
+  team_id: Int
+  "An object relationship"
+match: match!
+  "An object relationship"
+player: player!
+  "An object relationship"
+team: team
+}
+
+"columns and relationships of \"match_score\""
+type match_score { away_team_score: Int
+  home_team_score: Int
+  match_id: Int!
+  "An object relationship"
+match: match!
+}
+
+"columns and relationships of \"match_statistics\""
+type match_statistics { fouls_away: Int
+  fouls_home: Int
+  match_id: Int!
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+  "An object relationship"
+match: match!
+}
+
+"columns and relationships of \"player\""
+type player { current_team_id: Int
+  id: Int!
+  name: String!
+  national_team_id: Int
+  photo_url: String
+  position: String
+  total_caps: Int
+  "An aggregate relationship"
+match_players_aggregate("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): match_player_aggregate!
+  "An aggregate relationship"
+team_players_aggregate("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): team_player_aggregate!
+  "An array relationship"
+match_players("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): [match_player!]!
+  "An array relationship"
+team_players("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): [team_player!]!
+  "An object relationship"
+team: team
+  "An object relationship"
+teamByNationalTeamId: team
+}
+
+"columns and relationships of \"ranking\""
+type ranking { date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int!
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+  "An object relationship"
+team: team
+}
+
+"columns and relationships of \"stadium\""
+type stadium { capacity: Int
+  id: Int!
+  location: String
+  name: String!
+  photo_url: String
+  "An aggregate relationship"
+matches_aggregate("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): match_aggregate!
+  "An aggregate relationship"
+teamsByStadiumId_aggregate("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): team_aggregate!
+  "An aggregate relationship"
+teams_aggregate("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): team_aggregate!
+  "An array relationship"
+matches("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): [match!]!
+  "An array relationship"
+teams("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): [team!]!
+  "An array relationship"
+teamsByStadiumId("filter the rows returned"
+where: team_bool_exp, "sort the rows by one or more columns"
+order_by: [team_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_select_column!]): [team!]!
+}
+
+"columns and relationships of \"team\""
+type team { country: String
+  flag_url: String
+  id: Int!
+  league_id: Int
+  main_stadium_id: Int
+  name: String!
+  national_team: Boolean
+  stadium_id: Int
+  "An aggregate relationship"
+match_players_aggregate("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): match_player_aggregate!
+  "An aggregate relationship"
+matchesByHomeTeamId_aggregate("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): match_aggregate!
+  "An aggregate relationship"
+matches_aggregate("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): match_aggregate!
+  "An aggregate relationship"
+playersByNationalTeamId_aggregate("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): player_aggregate!
+  "An aggregate relationship"
+players_aggregate("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): player_aggregate!
+  "An aggregate relationship"
+rankings_aggregate("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): ranking_aggregate!
+  "An aggregate relationship"
+team_players_aggregate("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): team_player_aggregate!
+  "An array relationship"
+match_players("filter the rows returned"
+where: match_player_bool_exp, "sort the rows by one or more columns"
+order_by: [match_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_player_select_column!]): [match_player!]!
+  "An array relationship"
+matches("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): [match!]!
+  "An array relationship"
+matchesByHomeTeamId("filter the rows returned"
+where: match_bool_exp, "sort the rows by one or more columns"
+order_by: [match_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [match_select_column!]): [match!]!
+  "An array relationship"
+players("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): [player!]!
+  "An array relationship"
+playersByNationalTeamId("filter the rows returned"
+where: player_bool_exp, "sort the rows by one or more columns"
+order_by: [player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [player_select_column!]): [player!]!
+  "An array relationship"
+rankings("filter the rows returned"
+where: ranking_bool_exp, "sort the rows by one or more columns"
+order_by: [ranking_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [ranking_select_column!]): [ranking!]!
+  "An array relationship"
+team_players("filter the rows returned"
+where: team_player_bool_exp, "sort the rows by one or more columns"
+order_by: [team_player_order_by!], "limit the number of rows returned"
+limit: Int, "skip the first n rows. Use only with order_by"
+offset: Int, "distinct select on columns"
+distinct_on: [team_player_select_column!]): [team_player!]!
+  "An object relationship"
+league: league
+  "An object relationship"
+stadium: stadium
+  "An object relationship"
+stadiumByStadiumId: stadium
+}
+
+"columns and relationships of \"team_player\""
+type team_player { player_id: Int!
+  team_id: Int!
+  "An object relationship"
+player: player!
+  "An object relationship"
+team: team!
+}
+
+"mutation root"
+type mutation_root { "delete data from the table: \"league\""
+delete_league("filter the rows which have to be deleted"
+where: league_bool_exp!): league_mutation_response
+  "delete data from the table: \"match\""
+delete_match("filter the rows which have to be deleted"
+where: match_bool_exp!): match_mutation_response
+  "delete data from the table: \"match_player\""
+delete_match_player("filter the rows which have to be deleted"
+where: match_player_bool_exp!): match_player_mutation_response
+  "delete data from the table: \"match_score\""
+delete_match_score("filter the rows which have to be deleted"
+where: match_score_bool_exp!): match_score_mutation_response
+  "delete data from the table: \"match_statistics\""
+delete_match_statistics("filter the rows which have to be deleted"
+where: match_statistics_bool_exp!): match_statistics_mutation_response
+  "delete data from the table: \"player\""
+delete_player("filter the rows which have to be deleted"
+where: player_bool_exp!): player_mutation_response
+  "delete data from the table: \"ranking\""
+delete_ranking("filter the rows which have to be deleted"
+where: ranking_bool_exp!): ranking_mutation_response
+  "delete data from the table: \"stadium\""
+delete_stadium("filter the rows which have to be deleted"
+where: stadium_bool_exp!): stadium_mutation_response
+  "delete data from the table: \"team\""
+delete_team("filter the rows which have to be deleted"
+where: team_bool_exp!): team_mutation_response
+  "delete data from the table: \"team_player\""
+delete_team_player("filter the rows which have to be deleted"
+where: team_player_bool_exp!): team_player_mutation_response
+  "delete single row from the table: \"league\""
+delete_league_by_pk(id: Int!): league
+  "delete single row from the table: \"match\""
+delete_match_by_pk(id: Int!): match
+  "delete single row from the table: \"match_player\""
+delete_match_player_by_pk(match_id: Int!, player_id: Int!): match_player
+  "delete single row from the table: \"match_score\""
+delete_match_score_by_pk(match_id: Int!): match_score
+  "delete single row from the table: \"match_statistics\""
+delete_match_statistics_by_pk(match_id: Int!): match_statistics
+  "delete single row from the table: \"player\""
+delete_player_by_pk(id: Int!): player
+  "delete single row from the table: \"ranking\""
+delete_ranking_by_pk(id: Int!): ranking
+  "delete single row from the table: \"stadium\""
+delete_stadium_by_pk(id: Int!): stadium
+  "delete single row from the table: \"team\""
+delete_team_by_pk(id: Int!): team
+  "delete single row from the table: \"team_player\""
+delete_team_player_by_pk(team_id: Int!, player_id: Int!): team_player
+  "insert a single row into the table: \"league\""
+insert_league_one("upsert condition"
+on_conflict: league_on_conflict, "the row to be inserted"
+object: league_insert_input!): league
+  "insert a single row into the table: \"match\""
+insert_match_one("upsert condition"
+on_conflict: match_on_conflict, "the row to be inserted"
+object: match_insert_input!): match
+  "insert a single row into the table: \"match_player\""
+insert_match_player_one("upsert condition"
+on_conflict: match_player_on_conflict, "the row to be inserted"
+object: match_player_insert_input!): match_player
+  "insert a single row into the table: \"match_score\""
+insert_match_score_one("upsert condition"
+on_conflict: match_score_on_conflict, "the row to be inserted"
+object: match_score_insert_input!): match_score
+  "insert a single row into the table: \"match_statistics\""
+insert_match_statistics_one("upsert condition"
+on_conflict: match_statistics_on_conflict, "the row to be inserted"
+object: match_statistics_insert_input!): match_statistics
+  "insert a single row into the table: \"player\""
+insert_player_one("upsert condition"
+on_conflict: player_on_conflict, "the row to be inserted"
+object: player_insert_input!): player
+  "insert a single row into the table: \"ranking\""
+insert_ranking_one("upsert condition"
+on_conflict: ranking_on_conflict, "the row to be inserted"
+object: ranking_insert_input!): ranking
+  "insert a single row into the table: \"stadium\""
+insert_stadium_one("upsert condition"
+on_conflict: stadium_on_conflict, "the row to be inserted"
+object: stadium_insert_input!): stadium
+  "insert a single row into the table: \"team\""
+insert_team_one("upsert condition"
+on_conflict: team_on_conflict, "the row to be inserted"
+object: team_insert_input!): team
+  "insert a single row into the table: \"team_player\""
+insert_team_player_one("upsert condition"
+on_conflict: team_player_on_conflict, "the row to be inserted"
+object: team_player_insert_input!): team_player
+  "insert data into the table: \"league\""
+insert_league("upsert condition"
+on_conflict: league_on_conflict, "the rows to be inserted"
+objects: [league_insert_input!]!): league_mutation_response
+  "insert data into the table: \"match\""
+insert_match("upsert condition"
+on_conflict: match_on_conflict, "the rows to be inserted"
+objects: [match_insert_input!]!): match_mutation_response
+  "insert data into the table: \"match_player\""
+insert_match_player("upsert condition"
+on_conflict: match_player_on_conflict, "the rows to be inserted"
+objects: [match_player_insert_input!]!): match_player_mutation_response
+  "insert data into the table: \"match_score\""
+insert_match_score("upsert condition"
+on_conflict: match_score_on_conflict, "the rows to be inserted"
+objects: [match_score_insert_input!]!): match_score_mutation_response
+  "insert data into the table: \"match_statistics\""
+insert_match_statistics("upsert condition"
+on_conflict: match_statistics_on_conflict, "the rows to be inserted"
+objects: [match_statistics_insert_input!]!): match_statistics_mutation_response
+  "insert data into the table: \"player\""
+insert_player("upsert condition"
+on_conflict: player_on_conflict, "the rows to be inserted"
+objects: [player_insert_input!]!): player_mutation_response
+  "insert data into the table: \"ranking\""
+insert_ranking("upsert condition"
+on_conflict: ranking_on_conflict, "the rows to be inserted"
+objects: [ranking_insert_input!]!): ranking_mutation_response
+  "insert data into the table: \"stadium\""
+insert_stadium("upsert condition"
+on_conflict: stadium_on_conflict, "the rows to be inserted"
+objects: [stadium_insert_input!]!): stadium_mutation_response
+  "insert data into the table: \"team\""
+insert_team("upsert condition"
+on_conflict: team_on_conflict, "the rows to be inserted"
+objects: [team_insert_input!]!): team_mutation_response
+  "insert data into the table: \"team_player\""
+insert_team_player("upsert condition"
+on_conflict: team_player_on_conflict, "the rows to be inserted"
+objects: [team_player_insert_input!]!): team_player_mutation_response
+  "update data of the table: \"league\""
+update_league("sets the columns of the filtered rows to the given values"
+_set: league_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: league_inc_input, "filter the rows which have to be updated"
+where: league_bool_exp!): league_mutation_response
+  "update data of the table: \"match\""
+update_match("sets the columns of the filtered rows to the given values"
+_set: match_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_inc_input, "filter the rows which have to be updated"
+where: match_bool_exp!): match_mutation_response
+  "update data of the table: \"match_player\""
+update_match_player("sets the columns of the filtered rows to the given values"
+_set: match_player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_player_inc_input, "filter the rows which have to be updated"
+where: match_player_bool_exp!): match_player_mutation_response
+  "update data of the table: \"match_score\""
+update_match_score("sets the columns of the filtered rows to the given values"
+_set: match_score_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_score_inc_input, "filter the rows which have to be updated"
+where: match_score_bool_exp!): match_score_mutation_response
+  "update data of the table: \"match_statistics\""
+update_match_statistics("sets the columns of the filtered rows to the given values"
+_set: match_statistics_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_statistics_inc_input, "filter the rows which have to be updated"
+where: match_statistics_bool_exp!): match_statistics_mutation_response
+  "update data of the table: \"player\""
+update_player("sets the columns of the filtered rows to the given values"
+_set: player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: player_inc_input, "filter the rows which have to be updated"
+where: player_bool_exp!): player_mutation_response
+  "update data of the table: \"ranking\""
+update_ranking("sets the columns of the filtered rows to the given values"
+_set: ranking_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: ranking_inc_input, "filter the rows which have to be updated"
+where: ranking_bool_exp!): ranking_mutation_response
+  "update data of the table: \"stadium\""
+update_stadium("sets the columns of the filtered rows to the given values"
+_set: stadium_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: stadium_inc_input, "filter the rows which have to be updated"
+where: stadium_bool_exp!): stadium_mutation_response
+  "update data of the table: \"team\""
+update_team("sets the columns of the filtered rows to the given values"
+_set: team_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: team_inc_input, "filter the rows which have to be updated"
+where: team_bool_exp!): team_mutation_response
+  "update data of the table: \"team_player\""
+update_team_player("sets the columns of the filtered rows to the given values"
+_set: team_player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: team_player_inc_input, "filter the rows which have to be updated"
+where: team_player_bool_exp!): team_player_mutation_response
+  "update multiples rows of table: \"league\""
+update_league_many("updates to execute, in order"
+updates: [league_updates!]!): [league_mutation_response]
+  "update multiples rows of table: \"match\""
+update_match_many("updates to execute, in order"
+updates: [match_updates!]!): [match_mutation_response]
+  "update multiples rows of table: \"match_player\""
+update_match_player_many("updates to execute, in order"
+updates: [match_player_updates!]!): [match_player_mutation_response]
+  "update multiples rows of table: \"match_score\""
+update_match_score_many("updates to execute, in order"
+updates: [match_score_updates!]!): [match_score_mutation_response]
+  "update multiples rows of table: \"match_statistics\""
+update_match_statistics_many("updates to execute, in order"
+updates: [match_statistics_updates!]!): [match_statistics_mutation_response]
+  "update multiples rows of table: \"player\""
+update_player_many("updates to execute, in order"
+updates: [player_updates!]!): [player_mutation_response]
+  "update multiples rows of table: \"ranking\""
+update_ranking_many("updates to execute, in order"
+updates: [ranking_updates!]!): [ranking_mutation_response]
+  "update multiples rows of table: \"stadium\""
+update_stadium_many("updates to execute, in order"
+updates: [stadium_updates!]!): [stadium_mutation_response]
+  "update multiples rows of table: \"team\""
+update_team_many("updates to execute, in order"
+updates: [team_updates!]!): [team_mutation_response]
+  "update multiples rows of table: \"team_player\""
+update_team_player_many("updates to execute, in order"
+updates: [team_player_updates!]!): [team_player_mutation_response]
+  "update single row of the table: \"league\""
+update_league_by_pk("sets the columns of the filtered rows to the given values"
+_set: league_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: league_inc_input, pk_columns: league_pk_columns_input!): league
+  "update single row of the table: \"match\""
+update_match_by_pk("sets the columns of the filtered rows to the given values"
+_set: match_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_inc_input, pk_columns: match_pk_columns_input!): match
+  "update single row of the table: \"match_player\""
+update_match_player_by_pk("sets the columns of the filtered rows to the given values"
+_set: match_player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_player_inc_input, pk_columns: match_player_pk_columns_input!): match_player
+  "update single row of the table: \"match_score\""
+update_match_score_by_pk("sets the columns of the filtered rows to the given values"
+_set: match_score_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_score_inc_input, pk_columns: match_score_pk_columns_input!): match_score
+  "update single row of the table: \"match_statistics\""
+update_match_statistics_by_pk("sets the columns of the filtered rows to the given values"
+_set: match_statistics_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: match_statistics_inc_input, pk_columns: match_statistics_pk_columns_input!): match_statistics
+  "update single row of the table: \"player\""
+update_player_by_pk("sets the columns of the filtered rows to the given values"
+_set: player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: player_inc_input, pk_columns: player_pk_columns_input!): player
+  "update single row of the table: \"ranking\""
+update_ranking_by_pk("sets the columns of the filtered rows to the given values"
+_set: ranking_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: ranking_inc_input, pk_columns: ranking_pk_columns_input!): ranking
+  "update single row of the table: \"stadium\""
+update_stadium_by_pk("sets the columns of the filtered rows to the given values"
+_set: stadium_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: stadium_inc_input, pk_columns: stadium_pk_columns_input!): stadium
+  "update single row of the table: \"team\""
+update_team_by_pk("sets the columns of the filtered rows to the given values"
+_set: team_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: team_inc_input, pk_columns: team_pk_columns_input!): team
+  "update single row of the table: \"team_player\""
+update_team_player_by_pk("sets the columns of the filtered rows to the given values"
+_set: team_player_set_input, "increments the numeric columns with given value of the filtered values"
+_inc: team_player_inc_input, pk_columns: team_player_pk_columns_input!): team_player
+}
+
+"response of any mutation on the table \"league\""
+type league_mutation_response { "data from the rows affected by the mutation"
+returning: [league!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"match\""
+type match_mutation_response { "data from the rows affected by the mutation"
+returning: [match!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"match_player\""
+type match_player_mutation_response { "data from the rows affected by the mutation"
+returning: [match_player!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"match_score\""
+type match_score_mutation_response { "data from the rows affected by the mutation"
+returning: [match_score!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"match_statistics\""
+type match_statistics_mutation_response { "data from the rows affected by the mutation"
+returning: [match_statistics!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"player\""
+type player_mutation_response { "data from the rows affected by the mutation"
+returning: [player!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"ranking\""
+type ranking_mutation_response { "data from the rows affected by the mutation"
+returning: [ranking!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"stadium\""
+type stadium_mutation_response { "data from the rows affected by the mutation"
+returning: [stadium!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"team\""
+type team_mutation_response { "data from the rows affected by the mutation"
+returning: [team!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+"response of any mutation on the table \"team_player\""
+type team_player_mutation_response { "data from the rows affected by the mutation"
+returning: [team_player!]!
+  "number of rows affected by the mutation"
+affected_rows: Int!
+}
+
+enum __TypeKind {ENUM
+  INPUT_OBJECT
+  INTERFACE
+  LIST
+  NON_NULL
+  OBJECT
+  SCALAR
+  UNION
+}
+
+"column ordering options"
+enum order_by {"in ascending order, nulls first"
+asc_nulls_first
+  "in ascending order, nulls last"
+asc
+  "in ascending order, nulls last"
+asc_nulls_last
+  "in descending order, nulls first"
+desc
+  "in descending order, nulls first"
+desc_nulls_first
+  "in descending order, nulls last"
+desc_nulls_last
+}
+
+"ordering argument of a cursor"
+enum cursor_ordering {"ascending ordering of the cursor"
+ASC
+  "descending ordering of the cursor"
+DESC
+}
+
+"select \"match_aggregate_bool_exp_bool_and_arguments_columns\" columns of table \"match\""
+enum match_select_column_match_aggregate_bool_exp_bool_and_arguments_columns {"column name"
+completed
+}
+
+"select \"match_aggregate_bool_exp_bool_or_arguments_columns\" columns of table \"match\""
+enum match_select_column_match_aggregate_bool_exp_bool_or_arguments_columns {"column name"
+completed
+}
+
+"select \"match_player_aggregate_bool_exp_bool_and_arguments_columns\" columns of table \"match_player\""
+enum match_player_select_column_match_player_aggregate_bool_exp_bool_and_arguments_columns {"column name"
+is_starter
+}
+
+"select \"match_player_aggregate_bool_exp_bool_or_arguments_columns\" columns of table \"match_player\""
+enum match_player_select_column_match_player_aggregate_bool_exp_bool_or_arguments_columns {"column name"
+is_starter
+}
+
+"select \"team_aggregate_bool_exp_bool_and_arguments_columns\" columns of table \"team\""
+enum team_select_column_team_aggregate_bool_exp_bool_and_arguments_columns {"column name"
+national_team
+}
+
+"select \"team_aggregate_bool_exp_bool_or_arguments_columns\" columns of table \"team\""
+enum team_select_column_team_aggregate_bool_exp_bool_or_arguments_columns {"column name"
+national_team
+}
+
+"select columns of table \"league\""
+enum league_select_column {"column name"
+association
+  "column name"
+country
+  "column name"
+id
+  "column name"
+name
+  "column name"
+tier
+}
+
+"select columns of table \"match\""
+enum match_select_column {"column name"
+away_team_id
+  "column name"
+completed
+  "column name"
+current_minute
+  "column name"
+date
+  "column name"
+home_team_id
+  "column name"
+id
+  "column name"
+stadium_id
+  "column name"
+title
+}
+
+"select columns of table \"match_player\""
+enum match_player_select_column {"column name"
+is_starter
+  "column name"
+match_id
+  "column name"
+minutes_played
+  "column name"
+player_id
+  "column name"
+team_id
+}
+
+"select columns of table \"match_score\""
+enum match_score_select_column {"column name"
+away_team_score
+  "column name"
+home_team_score
+  "column name"
+match_id
+}
+
+"select columns of table \"match_statistics\""
+enum match_statistics_select_column {"column name"
+fouls_away
+  "column name"
+fouls_home
+  "column name"
+match_id
+  "column name"
+possession_away
+  "column name"
+possession_home
+  "column name"
+shots_away
+  "column name"
+shots_home
+}
+
+"select columns of table \"player\""
+enum player_select_column {"column name"
+current_team_id
+  "column name"
+id
+  "column name"
+name
+  "column name"
+national_team_id
+  "column name"
+photo_url
+  "column name"
+position
+  "column name"
+total_caps
+}
+
+"select columns of table \"ranking\""
+enum ranking_select_column {"column name"
+date
+  "column name"
+draws
+  "column name"
+fifa_points
+  "column name"
+id
+  "column name"
+losses
+  "column name"
+rank
+  "column name"
+team_id
+  "column name"
+wins
+}
+
+"select columns of table \"stadium\""
+enum stadium_select_column {"column name"
+capacity
+  "column name"
+id
+  "column name"
+location
+  "column name"
+name
+  "column name"
+photo_url
+}
+
+"select columns of table \"team\""
+enum team_select_column {"column name"
+country
+  "column name"
+flag_url
+  "column name"
+id
+  "column name"
+league_id
+  "column name"
+main_stadium_id
+  "column name"
+name
+  "column name"
+national_team
+  "column name"
+stadium_id
+}
+
+"select columns of table \"team_player\""
+enum team_player_select_column {"column name"
+player_id
+  "column name"
+team_id
+}
+
+"unique or primary key constraints on table \"league\""
+enum league_constraint {"unique or primary key constraint on columns \"id\""
+league_pkey
+}
+
+"unique or primary key constraints on table \"match\""
+enum match_constraint {"unique or primary key constraint on columns \"id\""
+match_pkey
+}
+
+"unique or primary key constraints on table \"match_player\""
+enum match_player_constraint {"unique or primary key constraint on columns \"player_id\", \"match_id\""
+match_player_pkey
+}
+
+"unique or primary key constraints on table \"match_score\""
+enum match_score_constraint {"unique or primary key constraint on columns \"match_id\""
+match_score_pkey
+}
+
+"unique or primary key constraints on table \"match_statistics\""
+enum match_statistics_constraint {"unique or primary key constraint on columns \"match_id\""
+match_statistics_pkey
+}
+
+"unique or primary key constraints on table \"player\""
+enum player_constraint {"unique or primary key constraint on columns \"id\""
+player_pkey
+}
+
+"unique or primary key constraints on table \"ranking\""
+enum ranking_constraint {"unique or primary key constraint on columns \"id\""
+ranking_pkey
+}
+
+"unique or primary key constraints on table \"stadium\""
+enum stadium_constraint {"unique or primary key constraint on columns \"id\""
+stadium_pkey
+}
+
+"unique or primary key constraints on table \"team\""
+enum team_constraint {"unique or primary key constraint on columns \"id\""
+team_pkey
+}
+
+"unique or primary key constraints on table \"team_player\""
+enum team_player_constraint {"unique or primary key constraint on columns \"player_id\", \"team_id\""
+team_player_pkey
+}
+
+"update columns of table \"league\""
+enum league_update_column {"column name"
+association
+  "column name"
+country
+  "column name"
+id
+  "column name"
+name
+  "column name"
+tier
+}
+
+"update columns of table \"match\""
+enum match_update_column {"column name"
+away_team_id
+  "column name"
+completed
+  "column name"
+current_minute
+  "column name"
+date
+  "column name"
+home_team_id
+  "column name"
+id
+  "column name"
+stadium_id
+  "column name"
+title
+}
+
+"update columns of table \"match_player\""
+enum match_player_update_column {"column name"
+is_starter
+  "column name"
+match_id
+  "column name"
+minutes_played
+  "column name"
+player_id
+  "column name"
+team_id
+}
+
+"update columns of table \"match_score\""
+enum match_score_update_column {"column name"
+away_team_score
+  "column name"
+home_team_score
+  "column name"
+match_id
+}
+
+"update columns of table \"match_statistics\""
+enum match_statistics_update_column {"column name"
+fouls_away
+  "column name"
+fouls_home
+  "column name"
+match_id
+  "column name"
+possession_away
+  "column name"
+possession_home
+  "column name"
+shots_away
+  "column name"
+shots_home
+}
+
+"update columns of table \"player\""
+enum player_update_column {"column name"
+current_team_id
+  "column name"
+id
+  "column name"
+name
+  "column name"
+national_team_id
+  "column name"
+photo_url
+  "column name"
+position
+  "column name"
+total_caps
+}
+
+"update columns of table \"ranking\""
+enum ranking_update_column {"column name"
+date
+  "column name"
+draws
+  "column name"
+fifa_points
+  "column name"
+id
+  "column name"
+losses
+  "column name"
+rank
+  "column name"
+team_id
+  "column name"
+wins
+}
+
+"update columns of table \"stadium\""
+enum stadium_update_column {"column name"
+capacity
+  "column name"
+id
+  "column name"
+location
+  "column name"
+name
+  "column name"
+photo_url
+}
+
+"update columns of table \"team\""
+enum team_update_column {"column name"
+country
+  "column name"
+flag_url
+  "column name"
+id
+  "column name"
+league_id
+  "column name"
+main_stadium_id
+  "column name"
+name
+  "column name"
+national_team
+  "column name"
+stadium_id
+}
+
+"update columns of table \"team_player\""
+enum team_player_update_column {"column name"
+player_id
+  "column name"
+team_id
+}
+
+input league_updates {"filter the rows which have to be updated"
+where: league_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: league_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: league_set_input
+}
+
+input match_aggregate_bool_exp {bool_and: match_aggregate_bool_exp_bool_and
+  bool_or: match_aggregate_bool_exp_bool_or
+  count: match_aggregate_bool_exp_count
+}
+
+input match_aggregate_bool_exp_bool_and {arguments: match_select_column_match_aggregate_bool_exp_bool_and_arguments_columns!
+  distinct: Boolean
+  filter: match_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input match_aggregate_bool_exp_bool_or {arguments: match_select_column_match_aggregate_bool_exp_bool_or_arguments_columns!
+  distinct: Boolean
+  filter: match_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input match_aggregate_bool_exp_count {arguments: [match_select_column!]
+  distinct: Boolean
+  filter: match_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input match_player_aggregate_bool_exp {bool_and: match_player_aggregate_bool_exp_bool_and
+  bool_or: match_player_aggregate_bool_exp_bool_or
+  count: match_player_aggregate_bool_exp_count
+}
+
+input match_player_aggregate_bool_exp_bool_and {arguments: match_player_select_column_match_player_aggregate_bool_exp_bool_and_arguments_columns!
+  distinct: Boolean
+  filter: match_player_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input match_player_aggregate_bool_exp_bool_or {arguments: match_player_select_column_match_player_aggregate_bool_exp_bool_or_arguments_columns!
+  distinct: Boolean
+  filter: match_player_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input match_player_aggregate_bool_exp_count {arguments: [match_player_select_column!]
+  distinct: Boolean
+  filter: match_player_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input match_player_updates {"filter the rows which have to be updated"
+where: match_player_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: match_player_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: match_player_set_input
+}
+
+input match_score_updates {"filter the rows which have to be updated"
+where: match_score_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: match_score_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: match_score_set_input
+}
+
+input match_statistics_updates {"filter the rows which have to be updated"
+where: match_statistics_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: match_statistics_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: match_statistics_set_input
+}
+
+input match_updates {"filter the rows which have to be updated"
+where: match_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: match_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: match_set_input
+}
+
+input player_aggregate_bool_exp {count: player_aggregate_bool_exp_count
+}
+
+input player_aggregate_bool_exp_count {arguments: [player_select_column!]
+  distinct: Boolean
+  filter: player_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input player_updates {"filter the rows which have to be updated"
+where: player_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: player_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: player_set_input
+}
+
+input ranking_aggregate_bool_exp {count: ranking_aggregate_bool_exp_count
+}
+
+input ranking_aggregate_bool_exp_count {arguments: [ranking_select_column!]
+  distinct: Boolean
+  filter: ranking_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input ranking_updates {"filter the rows which have to be updated"
+where: ranking_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: ranking_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: ranking_set_input
+}
+
+input stadium_updates {"filter the rows which have to be updated"
+where: stadium_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: stadium_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: stadium_set_input
+}
+
+input team_aggregate_bool_exp {bool_and: team_aggregate_bool_exp_bool_and
+  bool_or: team_aggregate_bool_exp_bool_or
+  count: team_aggregate_bool_exp_count
+}
+
+input team_aggregate_bool_exp_bool_and {arguments: team_select_column_team_aggregate_bool_exp_bool_and_arguments_columns!
+  distinct: Boolean
+  filter: team_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input team_aggregate_bool_exp_bool_or {arguments: team_select_column_team_aggregate_bool_exp_bool_or_arguments_columns!
+  distinct: Boolean
+  filter: team_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input team_aggregate_bool_exp_count {arguments: [team_select_column!]
+  distinct: Boolean
+  filter: team_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input team_player_aggregate_bool_exp {count: team_player_aggregate_bool_exp_count
+}
+
+input team_player_aggregate_bool_exp_count {arguments: [team_player_select_column!]
+  distinct: Boolean
+  filter: team_player_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+input team_player_updates {"filter the rows which have to be updated"
+where: team_player_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: team_player_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: team_player_set_input
+}
+
+input team_updates {"filter the rows which have to be updated"
+where: team_bool_exp!
+  "increments the numeric columns with given value of the filtered values"
+_inc: team_inc_input
+  "sets the columns of the filtered rows to the given values"
+_set: team_set_input
+}
+
+"Boolean expression to compare columns of type \"Boolean\". All fields are combined with logical 'AND'."
+input Boolean_comparison_exp {_eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
+"Boolean expression to compare columns of type \"Int\". All fields are combined with logical 'AND'."
+input Int_comparison_exp {_eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+"Boolean expression to compare columns of type \"String\". All fields are combined with logical 'AND'."
+input String_comparison_exp {_eq: String
+  _gt: String
+  _gte: String
+  _in: [String!]
+  _is_null: Boolean
+  _lt: String
+  _lte: String
+  _neq: String
+  _nin: [String!]
+  "does the column NOT match the given POSIX regular expression, case insensitive"
+_niregex: String
+  "does the column NOT match the given POSIX regular expression, case sensitive"
+_nregex: String
+  "does the column NOT match the given SQL regular expression"
+_nsimilar: String
+  "does the column NOT match the given case-insensitive pattern"
+_nilike: String
+  "does the column NOT match the given pattern"
+_nlike: String
+  "does the column match the given POSIX regular expression, case insensitive"
+_iregex: String
+  "does the column match the given POSIX regular expression, case sensitive"
+_regex: String
+  "does the column match the given SQL regular expression"
+_similar: String
+  "does the column match the given case-insensitive pattern"
+_ilike: String
+  "does the column match the given pattern"
+_like: String
+}
+
+"Boolean expression to compare columns of type \"date\". All fields are combined with logical 'AND'."
+input date_comparison_exp {_eq: date
+  _gt: date
+  _gte: date
+  _in: [date!]
+  _is_null: Boolean
+  _lt: date
+  _lte: date
+  _neq: date
+  _nin: [date!]
+}
+
+"Boolean expression to compare columns of type \"numeric\". All fields are combined with logical 'AND'."
+input numeric_comparison_exp {_eq: numeric
+  _gt: numeric
+  _gte: numeric
+  _in: [numeric!]
+  _is_null: Boolean
+  _lt: numeric
+  _lte: numeric
+  _neq: numeric
+  _nin: [numeric!]
+}
+
+"Boolean expression to compare columns of type \"timestamp\". All fields are combined with logical 'AND'."
+input timestamp_comparison_exp {_eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
+}
+
+"Boolean expression to filter rows from the table \"league\". All fields are combined with a logical 'AND'."
+input league_bool_exp {_and: [league_bool_exp!]
+  _not: league_bool_exp
+  _or: [league_bool_exp!]
+  association: String_comparison_exp
+  country: String_comparison_exp
+  id: Int_comparison_exp
+  name: String_comparison_exp
+  teams: team_bool_exp
+  teams_aggregate: team_aggregate_bool_exp
+  tier: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"match\". All fields are combined with a logical 'AND'."
+input match_bool_exp {_and: [match_bool_exp!]
+  _not: match_bool_exp
+  _or: [match_bool_exp!]
+  away_team_id: Int_comparison_exp
+  completed: Boolean_comparison_exp
+  current_minute: Int_comparison_exp
+  date: timestamp_comparison_exp
+  home_team_id: Int_comparison_exp
+  id: Int_comparison_exp
+  match_players: match_player_bool_exp
+  match_players_aggregate: match_player_aggregate_bool_exp
+  match_score: match_score_bool_exp
+  match_statistic: match_statistics_bool_exp
+  stadium: stadium_bool_exp
+  stadium_id: Int_comparison_exp
+  team: team_bool_exp
+  teamByHomeTeamId: team_bool_exp
+  title: String_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"match_player\". All fields are combined with a logical 'AND'."
+input match_player_bool_exp {_and: [match_player_bool_exp!]
+  _not: match_player_bool_exp
+  _or: [match_player_bool_exp!]
+  is_starter: Boolean_comparison_exp
+  match: match_bool_exp
+  match_id: Int_comparison_exp
+  minutes_played: Int_comparison_exp
+  player: player_bool_exp
+  player_id: Int_comparison_exp
+  team: team_bool_exp
+  team_id: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"match_score\". All fields are combined with a logical 'AND'."
+input match_score_bool_exp {_and: [match_score_bool_exp!]
+  _not: match_score_bool_exp
+  _or: [match_score_bool_exp!]
+  away_team_score: Int_comparison_exp
+  home_team_score: Int_comparison_exp
+  match: match_bool_exp
+  match_id: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"match_statistics\". All fields are combined with a logical 'AND'."
+input match_statistics_bool_exp {_and: [match_statistics_bool_exp!]
+  _not: match_statistics_bool_exp
+  _or: [match_statistics_bool_exp!]
+  fouls_away: Int_comparison_exp
+  fouls_home: Int_comparison_exp
+  match: match_bool_exp
+  match_id: Int_comparison_exp
+  possession_away: numeric_comparison_exp
+  possession_home: numeric_comparison_exp
+  shots_away: Int_comparison_exp
+  shots_home: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"player\". All fields are combined with a logical 'AND'."
+input player_bool_exp {_and: [player_bool_exp!]
+  _not: player_bool_exp
+  _or: [player_bool_exp!]
+  current_team_id: Int_comparison_exp
+  id: Int_comparison_exp
+  match_players: match_player_bool_exp
+  match_players_aggregate: match_player_aggregate_bool_exp
+  name: String_comparison_exp
+  national_team_id: Int_comparison_exp
+  photo_url: String_comparison_exp
+  position: String_comparison_exp
+  team: team_bool_exp
+  teamByNationalTeamId: team_bool_exp
+  team_players: team_player_bool_exp
+  team_players_aggregate: team_player_aggregate_bool_exp
+  total_caps: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"ranking\". All fields are combined with a logical 'AND'."
+input ranking_bool_exp {_and: [ranking_bool_exp!]
+  _not: ranking_bool_exp
+  _or: [ranking_bool_exp!]
+  date: date_comparison_exp
+  draws: Int_comparison_exp
+  fifa_points: numeric_comparison_exp
+  id: Int_comparison_exp
+  losses: Int_comparison_exp
+  rank: Int_comparison_exp
+  team: team_bool_exp
+  team_id: Int_comparison_exp
+  wins: Int_comparison_exp
+}
+
+"Boolean expression to filter rows from the table \"stadium\". All fields are combined with a logical 'AND'."
+input stadium_bool_exp {_and: [stadium_bool_exp!]
+  _not: stadium_bool_exp
+  _or: [stadium_bool_exp!]
+  capacity: Int_comparison_exp
+  id: Int_comparison_exp
+  location: String_comparison_exp
+  matches: match_bool_exp
+  matches_aggregate: match_aggregate_bool_exp
+  name: String_comparison_exp
+  photo_url: String_comparison_exp
+  teams: team_bool_exp
+  teamsByStadiumId: team_bool_exp
+  teamsByStadiumId_aggregate: team_aggregate_bool_exp
+  teams_aggregate: team_aggregate_bool_exp
+}
+
+"Boolean expression to filter rows from the table \"team\". All fields are combined with a logical 'AND'."
+input team_bool_exp {_and: [team_bool_exp!]
+  _not: team_bool_exp
+  _or: [team_bool_exp!]
+  country: String_comparison_exp
+  flag_url: String_comparison_exp
+  id: Int_comparison_exp
+  league: league_bool_exp
+  league_id: Int_comparison_exp
+  main_stadium_id: Int_comparison_exp
+  match_players: match_player_bool_exp
+  match_players_aggregate: match_player_aggregate_bool_exp
+  matches: match_bool_exp
+  matchesByHomeTeamId: match_bool_exp
+  matchesByHomeTeamId_aggregate: match_aggregate_bool_exp
+  matches_aggregate: match_aggregate_bool_exp
+  name: String_comparison_exp
+  national_team: Boolean_comparison_exp
+  players: player_bool_exp
+  playersByNationalTeamId: player_bool_exp
+  playersByNationalTeamId_aggregate: player_aggregate_bool_exp
+  players_aggregate: player_aggregate_bool_exp
+  rankings: ranking_bool_exp
+  rankings_aggregate: ranking_aggregate_bool_exp
+  stadium: stadium_bool_exp
+  stadiumByStadiumId: stadium_bool_exp
+  stadium_id: Int_comparison_exp
+  team_players: team_player_bool_exp
+  team_players_aggregate: team_player_aggregate_bool_exp
+}
+
+"Boolean expression to filter rows from the table \"team_player\". All fields are combined with a logical 'AND'."
+input team_player_bool_exp {_and: [team_player_bool_exp!]
+  _not: team_player_bool_exp
+  _or: [team_player_bool_exp!]
+  player: player_bool_exp
+  player_id: Int_comparison_exp
+  team: team_bool_exp
+  team_id: Int_comparison_exp
+}
+
+"Initial value of the column from where the streaming should start"
+input league_stream_cursor_value_input {association: String
+  country: String
+  id: Int
+  name: String
+  tier: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input match_player_stream_cursor_value_input {is_starter: Boolean
+  match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input match_score_stream_cursor_value_input {away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input match_statistics_stream_cursor_value_input {fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input match_stream_cursor_value_input {away_team_id: Int
+  completed: Boolean
+  current_minute: Int
+  date: timestamp
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+  title: String
+}
+
+"Initial value of the column from where the streaming should start"
+input player_stream_cursor_value_input {current_team_id: Int
+  id: Int
+  name: String
+  national_team_id: Int
+  photo_url: String
+  position: String
+  total_caps: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input ranking_stream_cursor_value_input {date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input stadium_stream_cursor_value_input {capacity: Int
+  id: Int
+  location: String
+  name: String
+  photo_url: String
+}
+
+"Initial value of the column from where the streaming should start"
+input team_player_stream_cursor_value_input {player_id: Int
+  team_id: Int
+}
+
+"Initial value of the column from where the streaming should start"
+input team_stream_cursor_value_input {country: String
+  flag_url: String
+  id: Int
+  league_id: Int
+  main_stadium_id: Int
+  name: String
+  national_team: Boolean
+  stadium_id: Int
+}
+
+"Ordering options when selecting data from \"league\"."
+input league_order_by {association: order_by
+  country: order_by
+  id: order_by
+  name: order_by
+  teams_aggregate: team_aggregate_order_by
+  tier: order_by
+}
+
+"Ordering options when selecting data from \"match\"."
+input match_order_by {away_team_id: order_by
+  completed: order_by
+  current_minute: order_by
+  date: order_by
+  home_team_id: order_by
+  id: order_by
+  match_players_aggregate: match_player_aggregate_order_by
+  match_score: match_score_order_by
+  match_statistic: match_statistics_order_by
+  stadium: stadium_order_by
+  stadium_id: order_by
+  team: team_order_by
+  teamByHomeTeamId: team_order_by
+  title: order_by
+}
+
+"Ordering options when selecting data from \"match_player\"."
+input match_player_order_by {is_starter: order_by
+  match: match_order_by
+  match_id: order_by
+  minutes_played: order_by
+  player: player_order_by
+  player_id: order_by
+  team: team_order_by
+  team_id: order_by
+}
+
+"Ordering options when selecting data from \"match_score\"."
+input match_score_order_by {away_team_score: order_by
+  home_team_score: order_by
+  match: match_order_by
+  match_id: order_by
+}
+
+"Ordering options when selecting data from \"match_statistics\"."
+input match_statistics_order_by {fouls_away: order_by
+  fouls_home: order_by
+  match: match_order_by
+  match_id: order_by
+  possession_away: order_by
+  possession_home: order_by
+  shots_away: order_by
+  shots_home: order_by
+}
+
+"Ordering options when selecting data from \"player\"."
+input player_order_by {current_team_id: order_by
+  id: order_by
+  match_players_aggregate: match_player_aggregate_order_by
+  name: order_by
+  national_team_id: order_by
+  photo_url: order_by
+  position: order_by
+  team: team_order_by
+  teamByNationalTeamId: team_order_by
+  team_players_aggregate: team_player_aggregate_order_by
+  total_caps: order_by
+}
+
+"Ordering options when selecting data from \"ranking\"."
+input ranking_order_by {date: order_by
+  draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team: team_order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"Ordering options when selecting data from \"stadium\"."
+input stadium_order_by {capacity: order_by
+  id: order_by
+  location: order_by
+  matches_aggregate: match_aggregate_order_by
+  name: order_by
+  photo_url: order_by
+  teamsByStadiumId_aggregate: team_aggregate_order_by
+  teams_aggregate: team_aggregate_order_by
+}
+
+"Ordering options when selecting data from \"team\"."
+input team_order_by {country: order_by
+  flag_url: order_by
+  id: order_by
+  league: league_order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  match_players_aggregate: match_player_aggregate_order_by
+  matchesByHomeTeamId_aggregate: match_aggregate_order_by
+  matches_aggregate: match_aggregate_order_by
+  name: order_by
+  national_team: order_by
+  playersByNationalTeamId_aggregate: player_aggregate_order_by
+  players_aggregate: player_aggregate_order_by
+  rankings_aggregate: ranking_aggregate_order_by
+  stadium: stadium_order_by
+  stadiumByStadiumId: stadium_order_by
+  stadium_id: order_by
+  team_players_aggregate: team_player_aggregate_order_by
+}
+
+"Ordering options when selecting data from \"team_player\"."
+input team_player_order_by {player: player_order_by
+  player_id: order_by
+  team: team_order_by
+  team_id: order_by
+}
+
+"Streaming cursor of the table \"league\""
+input league_stream_cursor_input {"Stream column input with initial value"
+initial_value: league_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"match\""
+input match_stream_cursor_input {"Stream column input with initial value"
+initial_value: match_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"match_player\""
+input match_player_stream_cursor_input {"Stream column input with initial value"
+initial_value: match_player_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"match_score\""
+input match_score_stream_cursor_input {"Stream column input with initial value"
+initial_value: match_score_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"match_statistics\""
+input match_statistics_stream_cursor_input {"Stream column input with initial value"
+initial_value: match_statistics_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"player\""
+input player_stream_cursor_input {"Stream column input with initial value"
+initial_value: player_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"ranking\""
+input ranking_stream_cursor_input {"Stream column input with initial value"
+initial_value: ranking_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"stadium\""
+input stadium_stream_cursor_input {"Stream column input with initial value"
+initial_value: stadium_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"team\""
+input team_stream_cursor_input {"Stream column input with initial value"
+initial_value: team_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"Streaming cursor of the table \"team_player\""
+input team_player_stream_cursor_input {"Stream column input with initial value"
+initial_value: team_player_stream_cursor_value_input!
+  "cursor ordering"
+ordering: cursor_ordering
+}
+
+"input type for incrementing numeric columns in table \"league\""
+input league_inc_input {id: Int
+  tier: Int
+}
+
+"input type for incrementing numeric columns in table \"match\""
+input match_inc_input {away_team_id: Int
+  current_minute: Int
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+}
+
+"input type for incrementing numeric columns in table \"match_player\""
+input match_player_inc_input {match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"input type for incrementing numeric columns in table \"match_score\""
+input match_score_inc_input {away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"input type for incrementing numeric columns in table \"match_statistics\""
+input match_statistics_inc_input {fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"input type for incrementing numeric columns in table \"player\""
+input player_inc_input {current_team_id: Int
+  id: Int
+  national_team_id: Int
+  total_caps: Int
+}
+
+"input type for incrementing numeric columns in table \"ranking\""
+input ranking_inc_input {draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"input type for incrementing numeric columns in table \"stadium\""
+input stadium_inc_input {capacity: Int
+  id: Int
+}
+
+"input type for incrementing numeric columns in table \"team\""
+input team_inc_input {id: Int
+  league_id: Int
+  main_stadium_id: Int
+  stadium_id: Int
+}
+
+"input type for incrementing numeric columns in table \"team_player\""
+input team_player_inc_input {player_id: Int
+  team_id: Int
+}
+
+"input type for inserting array relation for remote table \"match\""
+input match_arr_rel_insert_input {data: [match_insert_input!]!
+  "upsert condition"
+on_conflict: match_on_conflict
+}
+
+"input type for inserting array relation for remote table \"match_player\""
+input match_player_arr_rel_insert_input {data: [match_player_insert_input!]!
+  "upsert condition"
+on_conflict: match_player_on_conflict
+}
+
+"input type for inserting array relation for remote table \"player\""
+input player_arr_rel_insert_input {data: [player_insert_input!]!
+  "upsert condition"
+on_conflict: player_on_conflict
+}
+
+"input type for inserting array relation for remote table \"ranking\""
+input ranking_arr_rel_insert_input {data: [ranking_insert_input!]!
+  "upsert condition"
+on_conflict: ranking_on_conflict
+}
+
+"input type for inserting array relation for remote table \"team\""
+input team_arr_rel_insert_input {data: [team_insert_input!]!
+  "upsert condition"
+on_conflict: team_on_conflict
+}
+
+"input type for inserting array relation for remote table \"team_player\""
+input team_player_arr_rel_insert_input {data: [team_player_insert_input!]!
+  "upsert condition"
+on_conflict: team_player_on_conflict
+}
+
+"input type for inserting data into table \"league\""
+input league_insert_input {association: String
+  country: String
+  id: Int
+  name: String
+  teams: team_arr_rel_insert_input
+  tier: Int
+}
+
+"input type for inserting data into table \"match\""
+input match_insert_input {away_team_id: Int
+  completed: Boolean
+  current_minute: Int
+  date: timestamp
+  home_team_id: Int
+  id: Int
+  match_players: match_player_arr_rel_insert_input
+  match_score: match_score_obj_rel_insert_input
+  match_statistic: match_statistics_obj_rel_insert_input
+  stadium: stadium_obj_rel_insert_input
+  stadium_id: Int
+  team: team_obj_rel_insert_input
+  teamByHomeTeamId: team_obj_rel_insert_input
+  title: String
+}
+
+"input type for inserting data into table \"match_player\""
+input match_player_insert_input {is_starter: Boolean
+  match: match_obj_rel_insert_input
+  match_id: Int
+  minutes_played: Int
+  player: player_obj_rel_insert_input
+  player_id: Int
+  team: team_obj_rel_insert_input
+  team_id: Int
+}
+
+"input type for inserting data into table \"match_score\""
+input match_score_insert_input {away_team_score: Int
+  home_team_score: Int
+  match: match_obj_rel_insert_input
+  match_id: Int
+}
+
+"input type for inserting data into table \"match_statistics\""
+input match_statistics_insert_input {fouls_away: Int
+  fouls_home: Int
+  match: match_obj_rel_insert_input
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"input type for inserting data into table \"player\""
+input player_insert_input {current_team_id: Int
+  id: Int
+  match_players: match_player_arr_rel_insert_input
+  name: String
+  national_team_id: Int
+  photo_url: String
+  position: String
+  team: team_obj_rel_insert_input
+  teamByNationalTeamId: team_obj_rel_insert_input
+  team_players: team_player_arr_rel_insert_input
+  total_caps: Int
+}
+
+"input type for inserting data into table \"ranking\""
+input ranking_insert_input {date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team: team_obj_rel_insert_input
+  team_id: Int
+  wins: Int
+}
+
+"input type for inserting data into table \"stadium\""
+input stadium_insert_input {capacity: Int
+  id: Int
+  location: String
+  matches: match_arr_rel_insert_input
+  name: String
+  photo_url: String
+  teams: team_arr_rel_insert_input
+  teamsByStadiumId: team_arr_rel_insert_input
+}
+
+"input type for inserting data into table \"team\""
+input team_insert_input {country: String
+  flag_url: String
+  id: Int
+  league: league_obj_rel_insert_input
+  league_id: Int
+  main_stadium_id: Int
+  match_players: match_player_arr_rel_insert_input
+  matches: match_arr_rel_insert_input
+  matchesByHomeTeamId: match_arr_rel_insert_input
+  name: String
+  national_team: Boolean
+  players: player_arr_rel_insert_input
+  playersByNationalTeamId: player_arr_rel_insert_input
+  rankings: ranking_arr_rel_insert_input
+  stadium: stadium_obj_rel_insert_input
+  stadiumByStadiumId: stadium_obj_rel_insert_input
+  stadium_id: Int
+  team_players: team_player_arr_rel_insert_input
+}
+
+"input type for inserting data into table \"team_player\""
+input team_player_insert_input {player: player_obj_rel_insert_input
+  player_id: Int
+  team: team_obj_rel_insert_input
+  team_id: Int
+}
+
+"input type for inserting object relation for remote table \"league\""
+input league_obj_rel_insert_input {data: league_insert_input!
+  "upsert condition"
+on_conflict: league_on_conflict
+}
+
+"input type for inserting object relation for remote table \"match\""
+input match_obj_rel_insert_input {data: match_insert_input!
+  "upsert condition"
+on_conflict: match_on_conflict
+}
+
+"input type for inserting object relation for remote table \"match_score\""
+input match_score_obj_rel_insert_input {data: match_score_insert_input!
+  "upsert condition"
+on_conflict: match_score_on_conflict
+}
+
+"input type for inserting object relation for remote table \"match_statistics\""
+input match_statistics_obj_rel_insert_input {data: match_statistics_insert_input!
+  "upsert condition"
+on_conflict: match_statistics_on_conflict
+}
+
+"input type for inserting object relation for remote table \"player\""
+input player_obj_rel_insert_input {data: player_insert_input!
+  "upsert condition"
+on_conflict: player_on_conflict
+}
+
+"input type for inserting object relation for remote table \"stadium\""
+input stadium_obj_rel_insert_input {data: stadium_insert_input!
+  "upsert condition"
+on_conflict: stadium_on_conflict
+}
+
+"input type for inserting object relation for remote table \"team\""
+input team_obj_rel_insert_input {data: team_insert_input!
+  "upsert condition"
+on_conflict: team_on_conflict
+}
+
+"input type for updating data in table \"league\""
+input league_set_input {association: String
+  country: String
+  id: Int
+  name: String
+  tier: Int
+}
+
+"input type for updating data in table \"match\""
+input match_set_input {away_team_id: Int
+  completed: Boolean
+  current_minute: Int
+  date: timestamp
+  home_team_id: Int
+  id: Int
+  stadium_id: Int
+  title: String
+}
+
+"input type for updating data in table \"match_player\""
+input match_player_set_input {is_starter: Boolean
+  match_id: Int
+  minutes_played: Int
+  player_id: Int
+  team_id: Int
+}
+
+"input type for updating data in table \"match_score\""
+input match_score_set_input {away_team_score: Int
+  home_team_score: Int
+  match_id: Int
+}
+
+"input type for updating data in table \"match_statistics\""
+input match_statistics_set_input {fouls_away: Int
+  fouls_home: Int
+  match_id: Int
+  possession_away: numeric
+  possession_home: numeric
+  shots_away: Int
+  shots_home: Int
+}
+
+"input type for updating data in table \"player\""
+input player_set_input {current_team_id: Int
+  id: Int
+  name: String
+  national_team_id: Int
+  photo_url: String
+  position: String
+  total_caps: Int
+}
+
+"input type for updating data in table \"ranking\""
+input ranking_set_input {date: date
+  draws: Int
+  fifa_points: numeric
+  id: Int
+  losses: Int
+  rank: Int
+  team_id: Int
+  wins: Int
+}
+
+"input type for updating data in table \"stadium\""
+input stadium_set_input {capacity: Int
+  id: Int
+  location: String
+  name: String
+  photo_url: String
+}
+
+"input type for updating data in table \"team\""
+input team_set_input {country: String
+  flag_url: String
+  id: Int
+  league_id: Int
+  main_stadium_id: Int
+  name: String
+  national_team: Boolean
+  stadium_id: Int
+}
+
+"input type for updating data in table \"team_player\""
+input team_player_set_input {player_id: Int
+  team_id: Int
+}
+
+"on_conflict condition type for table \"league\""
+input league_on_conflict {constraint: league_constraint!
+  update_columns: [league_update_column!]! = []
+  where: league_bool_exp
+}
+
+"on_conflict condition type for table \"match\""
+input match_on_conflict {constraint: match_constraint!
+  update_columns: [match_update_column!]! = []
+  where: match_bool_exp
+}
+
+"on_conflict condition type for table \"match_player\""
+input match_player_on_conflict {constraint: match_player_constraint!
+  update_columns: [match_player_update_column!]! = []
+  where: match_player_bool_exp
+}
+
+"on_conflict condition type for table \"match_score\""
+input match_score_on_conflict {constraint: match_score_constraint!
+  update_columns: [match_score_update_column!]! = []
+  where: match_score_bool_exp
+}
+
+"on_conflict condition type for table \"match_statistics\""
+input match_statistics_on_conflict {constraint: match_statistics_constraint!
+  update_columns: [match_statistics_update_column!]! = []
+  where: match_statistics_bool_exp
+}
+
+"on_conflict condition type for table \"player\""
+input player_on_conflict {constraint: player_constraint!
+  update_columns: [player_update_column!]! = []
+  where: player_bool_exp
+}
+
+"on_conflict condition type for table \"ranking\""
+input ranking_on_conflict {constraint: ranking_constraint!
+  update_columns: [ranking_update_column!]! = []
+  where: ranking_bool_exp
+}
+
+"on_conflict condition type for table \"stadium\""
+input stadium_on_conflict {constraint: stadium_constraint!
+  update_columns: [stadium_update_column!]! = []
+  where: stadium_bool_exp
+}
+
+"on_conflict condition type for table \"team\""
+input team_on_conflict {constraint: team_constraint!
+  update_columns: [team_update_column!]! = []
+  where: team_bool_exp
+}
+
+"on_conflict condition type for table \"team_player\""
+input team_player_on_conflict {constraint: team_player_constraint!
+  update_columns: [team_player_update_column!]! = []
+  where: team_player_bool_exp
+}
+
+"order by aggregate values of table \"match\""
+input match_aggregate_order_by {avg: match_avg_order_by
+  count: order_by
+  max: match_max_order_by
+  min: match_min_order_by
+  stddev: match_stddev_order_by
+  stddev_pop: match_stddev_pop_order_by
+  stddev_samp: match_stddev_samp_order_by
+  sum: match_sum_order_by
+  var_pop: match_var_pop_order_by
+  var_samp: match_var_samp_order_by
+  variance: match_variance_order_by
+}
+
+"order by aggregate values of table \"match_player\""
+input match_player_aggregate_order_by {avg: match_player_avg_order_by
+  count: order_by
+  max: match_player_max_order_by
+  min: match_player_min_order_by
+  stddev: match_player_stddev_order_by
+  stddev_pop: match_player_stddev_pop_order_by
+  stddev_samp: match_player_stddev_samp_order_by
+  sum: match_player_sum_order_by
+  var_pop: match_player_var_pop_order_by
+  var_samp: match_player_var_samp_order_by
+  variance: match_player_variance_order_by
+}
+
+"order by aggregate values of table \"player\""
+input player_aggregate_order_by {avg: player_avg_order_by
+  count: order_by
+  max: player_max_order_by
+  min: player_min_order_by
+  stddev: player_stddev_order_by
+  stddev_pop: player_stddev_pop_order_by
+  stddev_samp: player_stddev_samp_order_by
+  sum: player_sum_order_by
+  var_pop: player_var_pop_order_by
+  var_samp: player_var_samp_order_by
+  variance: player_variance_order_by
+}
+
+"order by aggregate values of table \"ranking\""
+input ranking_aggregate_order_by {avg: ranking_avg_order_by
+  count: order_by
+  max: ranking_max_order_by
+  min: ranking_min_order_by
+  stddev: ranking_stddev_order_by
+  stddev_pop: ranking_stddev_pop_order_by
+  stddev_samp: ranking_stddev_samp_order_by
+  sum: ranking_sum_order_by
+  var_pop: ranking_var_pop_order_by
+  var_samp: ranking_var_samp_order_by
+  variance: ranking_variance_order_by
+}
+
+"order by aggregate values of table \"team\""
+input team_aggregate_order_by {avg: team_avg_order_by
+  count: order_by
+  max: team_max_order_by
+  min: team_min_order_by
+  stddev: team_stddev_order_by
+  stddev_pop: team_stddev_pop_order_by
+  stddev_samp: team_stddev_samp_order_by
+  sum: team_sum_order_by
+  var_pop: team_var_pop_order_by
+  var_samp: team_var_samp_order_by
+  variance: team_variance_order_by
+}
+
+"order by aggregate values of table \"team_player\""
+input team_player_aggregate_order_by {avg: team_player_avg_order_by
+  count: order_by
+  max: team_player_max_order_by
+  min: team_player_min_order_by
+  stddev: team_player_stddev_order_by
+  stddev_pop: team_player_stddev_pop_order_by
+  stddev_samp: team_player_stddev_samp_order_by
+  sum: team_player_sum_order_by
+  var_pop: team_player_var_pop_order_by
+  var_samp: team_player_var_samp_order_by
+  variance: team_player_variance_order_by
+}
+
+"order by avg() on columns of table \"match\""
+input match_avg_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by avg() on columns of table \"match_player\""
+input match_player_avg_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by avg() on columns of table \"player\""
+input player_avg_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by avg() on columns of table \"ranking\""
+input ranking_avg_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by avg() on columns of table \"team\""
+input team_avg_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by avg() on columns of table \"team_player\""
+input team_player_avg_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by max() on columns of table \"match\""
+input match_max_order_by {away_team_id: order_by
+  current_minute: order_by
+  date: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+  title: order_by
+}
+
+"order by max() on columns of table \"match_player\""
+input match_player_max_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by max() on columns of table \"player\""
+input player_max_order_by {current_team_id: order_by
+  id: order_by
+  name: order_by
+  national_team_id: order_by
+  photo_url: order_by
+  position: order_by
+  total_caps: order_by
+}
+
+"order by max() on columns of table \"ranking\""
+input ranking_max_order_by {date: order_by
+  draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by max() on columns of table \"team\""
+input team_max_order_by {country: order_by
+  flag_url: order_by
+  id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  name: order_by
+  stadium_id: order_by
+}
+
+"order by max() on columns of table \"team_player\""
+input team_player_max_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by min() on columns of table \"match\""
+input match_min_order_by {away_team_id: order_by
+  current_minute: order_by
+  date: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+  title: order_by
+}
+
+"order by min() on columns of table \"match_player\""
+input match_player_min_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by min() on columns of table \"player\""
+input player_min_order_by {current_team_id: order_by
+  id: order_by
+  name: order_by
+  national_team_id: order_by
+  photo_url: order_by
+  position: order_by
+  total_caps: order_by
+}
+
+"order by min() on columns of table \"ranking\""
+input ranking_min_order_by {date: order_by
+  draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by min() on columns of table \"team\""
+input team_min_order_by {country: order_by
+  flag_url: order_by
+  id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  name: order_by
+  stadium_id: order_by
+}
+
+"order by min() on columns of table \"team_player\""
+input team_player_min_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev() on columns of table \"match\""
+input match_stddev_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev() on columns of table \"match_player\""
+input match_player_stddev_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev() on columns of table \"player\""
+input player_stddev_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by stddev() on columns of table \"ranking\""
+input ranking_stddev_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by stddev() on columns of table \"team\""
+input team_stddev_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev() on columns of table \"team_player\""
+input team_player_stddev_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev_pop() on columns of table \"match\""
+input match_stddev_pop_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev_pop() on columns of table \"match_player\""
+input match_player_stddev_pop_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev_pop() on columns of table \"player\""
+input player_stddev_pop_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by stddev_pop() on columns of table \"ranking\""
+input ranking_stddev_pop_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by stddev_pop() on columns of table \"team\""
+input team_stddev_pop_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev_pop() on columns of table \"team_player\""
+input team_player_stddev_pop_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev_samp() on columns of table \"match\""
+input match_stddev_samp_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev_samp() on columns of table \"match_player\""
+input match_player_stddev_samp_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by stddev_samp() on columns of table \"player\""
+input player_stddev_samp_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by stddev_samp() on columns of table \"ranking\""
+input ranking_stddev_samp_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by stddev_samp() on columns of table \"team\""
+input team_stddev_samp_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by stddev_samp() on columns of table \"team_player\""
+input team_player_stddev_samp_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by sum() on columns of table \"match\""
+input match_sum_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by sum() on columns of table \"match_player\""
+input match_player_sum_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by sum() on columns of table \"player\""
+input player_sum_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by sum() on columns of table \"ranking\""
+input ranking_sum_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by sum() on columns of table \"team\""
+input team_sum_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by sum() on columns of table \"team_player\""
+input team_player_sum_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by var_pop() on columns of table \"match\""
+input match_var_pop_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by var_pop() on columns of table \"match_player\""
+input match_player_var_pop_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by var_pop() on columns of table \"player\""
+input player_var_pop_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by var_pop() on columns of table \"ranking\""
+input ranking_var_pop_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by var_pop() on columns of table \"team\""
+input team_var_pop_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by var_pop() on columns of table \"team_player\""
+input team_player_var_pop_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by var_samp() on columns of table \"match\""
+input match_var_samp_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by var_samp() on columns of table \"match_player\""
+input match_player_var_samp_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by var_samp() on columns of table \"player\""
+input player_var_samp_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by var_samp() on columns of table \"ranking\""
+input ranking_var_samp_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by var_samp() on columns of table \"team\""
+input team_var_samp_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by var_samp() on columns of table \"team_player\""
+input team_player_var_samp_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"order by variance() on columns of table \"match\""
+input match_variance_order_by {away_team_id: order_by
+  current_minute: order_by
+  home_team_id: order_by
+  id: order_by
+  stadium_id: order_by
+}
+
+"order by variance() on columns of table \"match_player\""
+input match_player_variance_order_by {match_id: order_by
+  minutes_played: order_by
+  player_id: order_by
+  team_id: order_by
+}
+
+"order by variance() on columns of table \"player\""
+input player_variance_order_by {current_team_id: order_by
+  id: order_by
+  national_team_id: order_by
+  total_caps: order_by
+}
+
+"order by variance() on columns of table \"ranking\""
+input ranking_variance_order_by {draws: order_by
+  fifa_points: order_by
+  id: order_by
+  losses: order_by
+  rank: order_by
+  team_id: order_by
+  wins: order_by
+}
+
+"order by variance() on columns of table \"team\""
+input team_variance_order_by {id: order_by
+  league_id: order_by
+  main_stadium_id: order_by
+  stadium_id: order_by
+}
+
+"order by variance() on columns of table \"team_player\""
+input team_player_variance_order_by {player_id: order_by
+  team_id: order_by
+}
+
+"primary key columns input for table: league"
+input league_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: match"
+input match_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: match_player"
+input match_player_pk_columns_input {match_id: Int!
+  player_id: Int!
+}
+
+"primary key columns input for table: match_score"
+input match_score_pk_columns_input {match_id: Int!
+}
+
+"primary key columns input for table: match_statistics"
+input match_statistics_pk_columns_input {match_id: Int!
+}
+
+"primary key columns input for table: player"
+input player_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: ranking"
+input ranking_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: stadium"
+input stadium_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: team"
+input team_pk_columns_input {id: Int!
+}
+
+"primary key columns input for table: team_player"
+input team_player_pk_columns_input {player_id: Int!
+  team_id: Int!
+}

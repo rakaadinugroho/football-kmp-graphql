@@ -1,0 +1,23 @@
+query DetailNationalTeamQuery($nationalTeamId: Int!) {
+  detailTeam: team_by_pk(id: $nationalTeamId) {
+    ...NationalTeam
+  }
+  player(where: {national_team_id: {_eq: $nationalTeamId}}) {
+    ...PlayerDetail
+  }
+  match(where: {_or: [{away_team_id: {_eq: $nationalTeamId}}, {home_team_id: {_eq: $nationalTeamId}}]}) {
+    completed
+    match_score {
+      away_team_score
+      home_team_score
+    }
+    awayTeam: team {
+      name
+      country
+    }
+    homeTeam: teamByHomeTeamId {
+      name
+      country
+    }
+  }
+}

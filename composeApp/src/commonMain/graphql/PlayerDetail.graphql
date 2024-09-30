@@ -1,0 +1,7 @@
+fragment PlayerDetail on player {
+    id
+    name
+    position
+    photo_url
+    total_caps
+}
